@@ -83,7 +83,7 @@ INSTALLED_APPS = (
     'afrh_prj',
 )
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 SYSTEM_SETTINGS_LOCAL_PATH = os.path.join(APP_ROOT, 'system_settings', 'System_Settings.json')
 WSGI_APPLICATION = 'afrh_prj.wsgi.application'
