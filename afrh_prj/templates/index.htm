@@ -26,400 +26,1181 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <html lang="en">
 <!--<![endif]-->
 
-<head>
-    <title>{{app_title}}</title>
+    <head>
+        <title>{{app_title}}</title>
 
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/favicon/apple-icon-57x57.png' %}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{% static 'img/favicon/apple-icon-60x60.png' %}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/favicon/apple-icon-72x72.png' %}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/favicon/apple-icon-76x76.png' %}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/favicon/apple-icon-114x114.png' %}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{% static 'img/favicon/apple-icon-120x120.png' %}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{% static 'img/favicon/apple-icon-144x144.png' %}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{% static 'img/favicon/apple-icon-152x152.png' %}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-icon-180x180.png' %}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'img/favicon/android-icon-192x192.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/favicon/favicon-96x96.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'img/favicon/manifest.json' %}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{% static 'img/favicon/ms-icon-144x144.png' %}">
+        <meta name="theme-color" content="#ffffff">
+        <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400i|Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <!-- Icons -->
+        <link rel="stylesheet" href="{% static 'plugins/hamburgers/hamburgers.min.css' %}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
 
-    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" />
+        <!-- CSS Implementing Plugins -->
+        <link rel="stylesheet" href="{% static 'css/unify/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'css/unify/slick.css' %}">
+        <link rel="stylesheet" href="{% static 'css/unify/hs.megamenu.css' %}">
+        <link  rel="stylesheet" href="{% static 'plugins/custombox/custombox.min.css' %}">
 
-    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- Unify -->
+        <link rel="stylesheet" href="{% static 'css/unify/unify.css' %}">
+        <link rel="stylesheet" href="{% static 'css/unify/unify-core.css' %}">
+        <link rel="stylesheet" href="{% static 'css/unify/unify-components.css' %}">
+        <link rel="stylesheet" href="{% static 'css/unify/unify-globals.css' %}">
 
-    <link href="{% static 'css/unify.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+        <!-- Revolution Slider -->
+        <link rel="stylesheet" href="{% static 'plugins/rev-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css' %}">
+        <link rel="stylesheet" href="{% static 'plugins/rev-slider/revolution/css/settings.css' %}">
+        <link rel="stylesheet" href="{% static 'plugins/rev-slider/revolution/css/layers.css' %}">
+        <link rel="stylesheet" href="{% static 'plugins/rev-slider/revolution/css/navigation.css' %}">	
 
-</head>
-
-<!--
-The #page-top ID is part of the scrolling feature.
-The data-spy and data-target are part of the built-in Bootstrap scrollspy function.
--->
-
-<body id="body" data-spy="scroll" data-target=".one-page-header" class="demo-lightbox-gallery">
-
-    <!--=== Header ===-->
-    <nav class="one-page-header navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-
-            <div class="menu-container page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">{% trans "Toggle navigation" %}</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <a class="navbar-brand" style="padding-top: 5px;" href="#intro">
-                    <img src="{% static 'img/landing/arches_logo_light.png' %}" style="height: 36px; width: 36px;" alt="Logo">
-                </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <div class="menu-container">
-                    <ul class="nav navbar-nav">
-                        <li class="page-scroll">
-                            <a href="#about">{% trans "About Arches" %}</a>
-                        </li>
-                        <li class="page-scroll">
-                            <a href="#services">{% trans "Capabilities" %}</a>
-                        </li>
-                        <li class="page-scroll">
-                            <a href="#news">{% trans "News" %}</a>
-                        </li>
-                        <li class="page-scroll">
-                            <a href="{% url 'search_home' %}">{% trans "Search" %}</a>
-                        </li>
-                        {% if user|can_create_resource_instance %}
-                        <li class="page-scroll">
-                            <a href="{% url 'resource' %}">{% trans "Manage Data" %}</a>
-                        </li>
-                        {% endif %}
-                        {% if user|has_group:"Graph Editor" %}
-                        <li class="page-scroll">
-                            <a href="{% url 'graph' '' %}">{% trans "Design" %}</a>
-                        </li>
-                        {% endif %}
-                        <li class="page-scroll" style="display: flex; flex-direction: row">
-                            {% if user.username == 'anonymous' %}
-                            <a id="auth-link" href="{% url 'auth' %}?next={% url 'home' %}{% if user.username != 'anonymous' %}&logout=true{% endif %}">
-                                {% trans "Login" %}
+        <!-- Overrides -->
+        <link href="{% static 'css/index.css' %}" rel="stylesheet">
+        <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <!--=== Header ===-->
+        <header id="js-header" class="u-header">
+            <div class="u-header__section u-header__section--light g-bg-white">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container">
+                        <div class="menu-container page-scroll">
+                             <!-- Responsive Toggle Button -->
+                                <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+                                  <span class="hamburger hamburger--slider">
+                                    <span class="hamburger-box">
+                                        <span class="hamburger-inner"></span>
+                                    </span>
+                                  </span>
+                                </button>
+                                <!-- End Responsive Toggle Button -->
+                            <a class="navbar-brand" style="padding-top: 5px;" href="#">
+                                <img src="{% static 'img/afrh_logo.png' %}" style="height: 80px; width: 80px;" alt="AFRH Logo">
                             </a>
-                            {% else %}
-                            <a id="auth-link" data-bind="click: function(){showAuthMenu(!showAuthMenu())}">
-                                {% trans "Welcome" %} {{ user.first_name|default:user.username }}
-                            </a>
-                            <span class="fa fa-chevron-circle-down auth-options" data-bind="click: function(){showAuthMenu(!showAuthMenu())}"></span>
-
-                            {% endif %}
-                        </li>
-                        <!-- ko if: showAuthMenu -->
-                        <ul class="auth-options">
-                            <li><a href="{% url 'auth' %}?next={% url 'home' %}{% if user.username != 'anonymous' %}&logout=true{% endif %}">{% trans 'Logout' %}</a></li>
-                            <li><a href="{% url 'user_profile_manager' %}">{% trans 'User Profile' %}</a></li>
-                        </ul>
-                        <!-- /ko -->
-                    </ul>
-                </div>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
+                            <ul class="navbar-nav text-uppercase g-font-weight-600 ml-auto">
+                                <li class="nav-item g-mx-20--lg">
+                                    <a href="#about" class="nav-link px-0">{% trans "About" %}</a>
+                                </li>
+                                <li class="nav-item g-mx-20--lg">
+                                    <a href="{% url 'search_home' %}" class="nav-link px-0"><i class="fas fa-search"></i> {% trans "Search the Map" %}</a>
+                                </li>
+                                <li class="nav-item g-mx-20--lg">
+                                    <a href="#help" class="nav-link px-0"><i class="far fa-question-circle"></i> {% trans "Help" %}</a>
+                                </li>
+                                {% if user|can_create_resource_instance %}
+                                <li class="nav-item g-mx-20--lg">
+                                    <a href="{% url 'resource' %}" class="nav-link px-0">{% trans "Manage Data" %}</a>
+                                </li>
+                                {% endif %}
+                                {% if user|has_group:"Graph Editor" %}
+                                <li class="nav-item g-mx-20--lg">
+                                    <a href="{% url 'graph' '' %}" class="nav-link px-0">{% trans "Design" %}</a>
+                                </li>
+                                {% endif %}
+                                 <li class="nav-item g-mx-20--lg">
+                                    {% if user.username == 'anonymous' %}
+                                    <a id="auth-link" href="{% url 'auth' %}?next={% url 'home' %}{% if user.username != 'anonymous' %}&logout=true{% endif %}" class="nav-link px-0"><i class="fas fa-sign-in-alt"></i> 
+                                        {% trans "Login" %}
+                                    </a>
+                                    {% else %}
+                                    <a id="auth-link" data-bind="click: function(){showAuthMenu(!showAuthMenu())}" class="nav-link px-0">
+                                        {% trans "Welcome" %} {{ user.first_name|default:user.username }}
+                                    </a>
+                                    <span class="fa fa-chevron-circle-down auth-options" data-bind="click: function(){showAuthMenu(!showAuthMenu())}"></span>
+                                    {% endif %}
+                                </li>
+                                <!-- ko if: showAuthMenu -->
+                                <ul class="auth-options">
+                                    <li><a href="{% url 'auth' %}?next={% url 'home' %}{% if user.username != 'anonymous' %}&logout=true{% endif %}"><i class="fas fa-sign-out-alt"></i> {% trans 'Logout' %}</a></li>
+                                    <li><a href="{% url 'user_profile_manager' %}">{% trans 'User Profile' %}</a></li>
+                                </ul>
+                                <!-- /ko -->
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container -->
+                </nav>
             </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-    <!--=== End Header ===-->
-
-    <!-- Intro Section -->
-    <section id="intro" class="intro-section">
-        <div class="fullscreenbanner-container">
-            <div class="fullscreenbanner">
-                <ul>
-                    <!-- SLIDE 1 -->
-                    <li data-transition="slideright" data-slotamount="5" data-masterspeed="700" data-title="Slide 1">
+        </header>
+        <!--=== End Header ===-->
+        <!-- Slider -->
+        <div id="rev_slider_477_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="clean-new-slider" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+            <div id="rev_slider_477_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.1">
+                <ul>	
+                    <!-- SLIDE  -->
+                    <li data-index="rs-1651" data-transition="fadethroughtransparent" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{% static 'img/slides/1magnus_thumb.jpg' %}"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="{% static 'img/landing/landing1.png' %}" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-
+                        <img src="{% static 'img/slides/dummy.png' %}"  alt=""  data-lazyload="{% static 'img/slides/1magnus.jpg' %}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
-                        <div class="tp-caption rs-caption-1 sft start text-bold" delay="4500" data-x="center" data-hoffset="0" data-y="100" data-speed="800" data-start="1000" data-easing="Back.easeInOut" data-endspeed="300">
-                            Arches
-                        </div>
 
-                        <!-- LAYER -->
-                        <div class="tp-caption rs-caption-2 sft" data-x="center" data-hoffset="0" data-y="200" data-speed="1000" data-start="3000" data-easing="Power4.easeOut" data-endspeed="300" data-endeasing="Power1.easeIn" data-captionhidden="off" style="z-index: 6">
-                            {% trans "A Data Management and Integration Platform<br> To Preserve and Protect Cultural Heritage." %}
-                        </div>
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
+                             id="slide-1651-layer-1" 
+                             data-x="['right','right','right','right']" data-hoffset="['30','30','30','20']" 
+                             data-y="['top','top','top','top']" data-voffset="['30','30','30','20']" 
+                                        data-width="['430','430','350','250']"
+                            data-height="['540','540','540','410']"
+                            data-whitespace="nowrap"
 
-                        <!-- LAYER -->
-                        <div class="tp-caption rs-caption-3 sft" data-x="center" data-hoffset="0" data-y="360" data-speed="800" data-start="3500" data-easing="Power4.easeOut" data-endspeed="300" data-endeasing="Power1.easeIn" data-captionhidden="off" style="z-index: 6">
-                            <span class="page-scroll"><a href="#about" class="btn-u btn-brd btn-brd-hover btn-u-light">{% trans "Learn More" %}</a></span>
-                            {% if user.username == 'anonymous' %}
-                            <span class="page-scroll"><a href="{% url 'auth' %}?next={% url 'graph' '' %}" class="btn-u btn-brd btn-brd-hover btn-u-light">{% trans "Login" %}</a></span>
-                            {% endif %}
-                            {% if user|can_create_resource_instance %}
-                            <span class="page-scroll"><a href="{% url 'resource' %}" class="btn-u btn-brd btn-brd-hover btn-u-light">{% trans "Manage Data" %}</a></span>
-                            {% endif %}
-                        </div>
+                            data-type="shape" 
+                            data-responsive_offset="on" 
 
-                        <!-- Attribution -->
-                        <div class="" style="position: absolute; top: 95%; left: 15px; color: #fff; padding: 10px; background: rgba(0,0,0,.5);">
-                            <span class="">Photo:  https://www.flickr.com/photos/bibendum84/ (CC BY 2.0)</span>
-                        </div>
+                            data-frames='[{"from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","speed":1400,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 5;background-color:rgba(255, 255, 255, 1.00);border-color:rgba(0, 0, 0, 0);border-width:0px;"> </div>
+
+                        <!-- LAYER NR. 2 -->
+                        <div class="tp-caption PostSlider-Category   tp-resizeme" 
+                             id="slide-1651-layer-3" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['60','60','60','40']" 
+                                        data-fontsize="['15','15','13','13']"
+                            data-lineheight="['15','15','13','13']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="nowrap"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":600,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 6; min-width: 370px; max-width: 370px; white-space: nowrap;">Explore History</div>
+
+                        <!-- LAYER NR. 3 -->
+                        <div class="tp-caption PostSlider-Title   tp-resizeme" 
+                             id="slide-1651-layer-2" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['102','102','92','68']" 
+                                        data-fontsize="['40','40','30','20']"
+                            data-lineheight="['40','40','30','20']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="normal"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":700,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 7; min-width: 370px; max-width: 370px; white-space: normal;">Welcome to the Armed Forces Retirement Home - Washington</div>
+
+                        <!-- LAYER NR. 4 -->
+                        <div class="tp-caption PostSlider-Content   tp-resizeme" 
+                             id="slide-1651-layer-4" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['265','265','215','154']" 
+                                        data-fontsize="['15','15','14','13']"
+                            data-lineheight="['23','23','21','20']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="normal"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":800,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 8; min-width: 370px; max-width: 370px; white-space: normal;">Discover the historic monuments and memorable events of the nation’s oldest continuously operating retirement community for enlisted military personnel. <span class="photocap">Image: Lithograph of the U.S. Soldiers' Home, 1863</span></div>
+
+                        <!-- LAYER NR. 5 -->
+                        <a href="{% url 'search_home' %}"><div class="tp-caption PostSlider-Button rev-btn  tp-resizeme" 
+                             id="slide-1651-layer-5" 
+                             data-x="['left','left','left','left']" data-hoffset="['770','593','428','230']" 
+                             data-y="['top','top','top','top']" data-voffset="['446','446','446','366']" 
+                                        data-width="none"
+                            data-height="none"
+                            data-whitespace="nowrap"
+
+                            data-type="button" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:10px;opacity:0;","speed":500,"to":"o:1;","delay":900,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"y:10px;opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bg:rgba(173, 31, 45, 1.00);bw:1px 1px 1px 1px;"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[1,1,1,1]"
+                            data-paddingright="[55,55,55,55]"
+                            data-paddingbottom="[1,1,1,1]"
+                            data-paddingleft="[23,23,23,23]"
+
+                            style="z-index: 9; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;"><i class="fas fa-search-location" style="font-size:1.5em; float:left; margin-top:15px;margin-right:10px;"></i> Start Exploring</div></a>
                     </li>
-
-                    <!-- SLIDE 2 -->
-                    <li data-transition="slideup" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
+                    <!-- SLIDE  -->
+                    <li data-index="rs-1652" data-transition="fadethroughtransparent" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{% static 'img/slides/2eagle_thumb.jpg' %}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="{% static 'img/landing/landing2.jpg' %}" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-
+                        <img src="{% static 'img/slides/dummy.png' %}"  alt=""  data-lazyload="{% static 'img/slides/2eagle.jpg' %}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
-                        <div class="tp-caption rs-caption-1 sft start text-bold" data-x="center" data-hoffset="0" data-y="100" data-speed="800" data-start="1500" data-easing="Back.easeInOut" data-endspeed="300">
-                            {% trans "Dynamically Define Your Inventory" %}
-                        </div>
 
-                        <!-- LAYER -->
-                        <div class="tp-caption rs-caption-2 sft" data-x="center" data-hoffset="0" data-y="200" data-speed="1000" data-start="2500" data-easing="Power4.easeOut" data-endspeed="300" data-endeasing="Power1.easeIn" data-captionhidden="off" style="z-index: 6">
-                            {% trans "Arches Lets You Easily Create Inventory Databases<br> And Share Them With Others" %}
-                        </div>
+                        <!-- LAYER NR. 6 -->
+                        <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
+                             id="slide-1652-layer-1" 
+                             data-x="['right','right','right','right']" data-hoffset="['30','30','30','20']" 
+                             data-y="['top','top','top','top']" data-voffset="['30','30','30','20']" 
+                                        data-width="['430','430','350','250']"
+                            data-height="['540','540','540','410']"
+                            data-whitespace="nowrap"
 
-                        <!-- LAYER -->
-                        <div class="tp-caption rs-caption-3 sft" data-x="center" data-hoffset="0" data-y="360" data-speed="800" data-start="3500" data-easing="Power4.easeOut" data-endspeed="300" data-endeasing="Power1.easeIn" data-captionhidden="off" style="z-index: 6">
-                            <span class="page-scroll"><a href="#about" class="btn-u btn-brd btn-brd-hover btn-u-light">{% trans "Learn More" %}</a></span>
-                        </div>
+                            data-type="shape" 
+                            data-responsive_offset="on" 
 
-                        <!-- Attribution -->
-                        <div class="" style="position: absolute; top: 95%; left: 15px; color: #fff; padding: 10px; background: rgba(0,0,0,.5);">
-                            <span class="">Photo:  https://www.flickr.com/photos/davidedamico/ (CC BY 2.0)</span>
-                        </div>
+                            data-frames='[{"from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","speed":1400,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 10;background-color:rgba(255, 255, 255, 1.00);border-color:rgba(0, 0, 0, 0);border-width:0px;"> </div>
+
+                        <!-- LAYER NR. 7 -->
+                        <div class="tp-caption PostSlider-Category   tp-resizeme" 
+                             id="slide-1652-layer-3" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['60','60','60','40']" 
+                                        data-fontsize="['15','15','13','13']"
+                            data-lineheight="['15','15','13','13']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="nowrap"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":600,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 11; min-width: 370px; max-width: 370px; white-space: nowrap;">AFRH through the Decades</div>
+
+                        <!-- LAYER NR. 8 -->
+                        <div class="tp-caption PostSlider-Title   tp-resizeme" 
+                             id="slide-1652-layer-2" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['102','102','92','68']" 
+                                        data-fontsize="['40','40','30','20']"
+                            data-lineheight="['40','40','30','20']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="normal"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":700,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 12; min-width: 370px; max-width: 370px; white-space: normal;">A Story of Growth and Development</div>
+
+                        <!-- LAYER NR. 9 -->
+                        <div class="tp-caption PostSlider-Content   tp-resizeme" 
+                             id="slide-1652-layer-4" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['265','265','215','154']" 
+                                        data-fontsize="['15','15','14','13']"
+                            data-lineheight="['23','23','21','20']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="normal"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":800,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 13; min-width: 370px; max-width: 370px; white-space: normal;">Search the interactive map to trace the evolution of the AFRH from a single structure at its founding in 1851 to the present sprawling complex of buildings from every subsequent era of American history.<span class="photocap">Image: Eagle Gate, early 20th century</span></div>
+
+                        <!-- LAYER NR. 10 -->
+                        <div class="tp-caption PostSlider-Button rev-btn  tp-resizeme" 
+                             id="slide-1652-layer-5" 
+                             data-x="['left','left','left','left']" data-hoffset="['770','593','428','230']" 
+                             data-y="['top','top','top','top']" data-voffset="['446','446','446','366']" 
+                                        data-width="none"
+                            data-height="none"
+                            data-whitespace="nowrap"
+
+                            data-type="button" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:10px;opacity:0;","speed":500,"to":"o:1;","delay":900,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"y:10px;opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bg:rgba(173, 31, 45, 1.00);bw:1px 1px 1px 1px;"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[1,1,1,1]"
+                            data-paddingright="[55,55,55,55]"
+                            data-paddingbottom="[1,1,1,1]"
+                            data-paddingleft="[23,23,23,23]"
+
+                            style="z-index: 14; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;"><i class="fas fa-search-location" style="font-size:1.5em; float:left; margin-top:15px;margin-right:10px;"></i> Start Exploring</div>
                     </li>
-
-                    <!-- SLIDE 3 -->
-                    <li data-transition="slideup" data-slotamount="5" data-masterspeed="700" data-title="Slide 3">
+                    <!-- SLIDE  -->
+                    <li data-index="rs-1653" data-transition="fadethroughtransparent" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{% static 'img/slides/3aerial_thumb.jpg' %}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="{% static 'img/landing/landing3.jpg' %}" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-
+                        <img src="{% static 'img/slides/dummy.png' %}"  alt=""  data-lazyload="{% static 'img/slides/3aerial.jpg' %}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
-                        <div class="tp-caption rs-caption-1 sft start text-bold" data-x="center" data-hoffset="0" data-y="110" data-speed="800" data-start="1500" data-easing="Back.easeInOut" data-endspeed="300">
-                            {% trans "Data Discovery" %}
-                        </div>
 
-                        <!-- LAYER -->
-                        <div class="tp-caption rs-caption-2 sfb" data-x="center" data-hoffset="0" data-y="210" data-speed="800" data-start="2500" data-easing="Power4.easeOut" data-endspeed="300" data-endeasing="Power1.easeIn" data-captionhidden="off" style="z-index: 6">
-                            {% trans "Easily Find Relevant Projects, Artistic Works<br> and Retrieve Data for Interpretation and Analysis" %}
-                        </div>
+                        <!-- LAYER NR. 11 -->
+                        <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
+                             id="slide-1653-layer-1" 
+                             data-x="['right','right','right','right']" data-hoffset="['30','30','30','20']" 
+                             data-y="['top','top','top','top']" data-voffset="['30','30','30','20']" 
+                                        data-width="['430','430','350','250']"
+                            data-height="['540','540','540','410']"
+                            data-whitespace="nowrap"
 
-                        <!-- LAYER -->
-                        <div class="tp-caption rs-caption-3 sfb" data-x="center" data-hoffset="0" data-y="370" data-speed="800" data-start="3500" data-easing="Power4.easeOut" data-endspeed="300" data-endeasing="Power1.easeIn" data-captionhidden="off" style="z-index: 6">
-                            <span class="page-scroll"><a href="#about" class="btn-u btn-brd btn-brd-hover btn-u-light">{% trans "Search Arches" %}</a></span>
-                        </div>
+                            data-type="shape" 
+                            data-responsive_offset="on" 
 
-                        <!-- Attribution -->
-                        <div class="" style="position: absolute; top: 95%; left: 15px; color: #fff; padding: 10px; background: rgba(0,0,0,.5);">
-                            <span class="">Photo:  https://www.flickr.com/photos/pedrosz/ (CC BY 2.0)</span>
-                        </div>
+                            data-frames='[{"from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","speed":1400,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 15;background-color:rgba(255, 255, 255, 1.00);border-color:rgba(0, 0, 0, 0);border-width:0px;"> </div>
+
+                        <!-- LAYER NR. 12 -->
+                        <div class="tp-caption PostSlider-Category   tp-resizeme" 
+                             id="slide-1653-layer-3" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['60','60','60','40']" 
+                                        data-fontsize="['15','15','13','13']"
+                            data-lineheight="['15','15','13','13']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="nowrap"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":600,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 16; min-width: 370px; max-width: 370px; white-space: nowrap;">A National Treasure</div>
+
+                        <!-- LAYER NR. 13 -->
+                        <div class="tp-caption PostSlider-Title   tp-resizeme" 
+                             id="slide-1653-layer-2" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['102','102','92','68']" 
+                                        data-fontsize="['40','40','30','20']"
+                            data-lineheight="['40','40','30','20']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="normal"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":700,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 17; min-width: 370px; max-width: 370px; white-space: normal;">Monuments of Service to America</div>
+
+                        <!-- LAYER NR. 14 -->
+                        <div class="tp-caption PostSlider-Content   tp-resizeme" 
+                             id="slide-1653-layer-4" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['265','265','215','154']" 
+                                        data-fontsize="['15','15','14','13']"
+                            data-lineheight="['23','23','21','20']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="normal"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":800,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 18; min-width: 370px; max-width: 370px; white-space: normal;">Declared a National Historic District in 2007, the AFRH campus is a treasure trove of architectural gems and historical buildings, associated with some of the most famous figures in American military history.<span class="photocap">Image: Lincoln Cottage and Sherman Building, present day</span></div>
+
+                        <!-- LAYER NR. 15 -->
+                        <div class="tp-caption PostSlider-Button rev-btn  tp-resizeme" 
+                             id="slide-1653-layer-5" 
+                             data-x="['left','left','left','left']" data-hoffset="['770','593','428','230']" 
+                             data-y="['top','top','top','top']" data-voffset="['446','446','446','366']" 
+                                        data-width="none"
+                            data-height="none"
+                            data-whitespace="nowrap"
+
+                            data-type="button" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:10px;opacity:0;","speed":500,"to":"o:1;","delay":900,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"y:10px;opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bg:rgba(173, 31, 45, 1.00);bw:1px 1px 1px 1px;"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[1,1,1,1]"
+                            data-paddingright="[55,55,55,55]"
+                            data-paddingbottom="[1,1,1,1]"
+                            data-paddingleft="[23,23,23,23]"
+
+                            style="z-index: 19; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;"><i class="fas fa-search-location" style="font-size:1.5em; float:left; margin-top:15px;margin-right:10px;"></i> Start Exploring</div>
+                    </li>
+                    <!-- SLIDE  -->
+                    <li data-index="rs-1654" data-transition="fadethroughtransparent" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{% static 'img/slides/4air_thumb.jpg' %}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                        <!-- MAIN IMAGE -->
+                        <img src="{% static 'img/slides/dummy.png' %}"  alt=""  data-lazyload="{% static 'img/slides/4air.jpg' %}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+
+                        <!-- LAYER NR. 16 -->
+                        <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
+                             id="slide-1654-layer-1" 
+                             data-x="['right','right','right','right']" data-hoffset="['30','30','30','20']" 
+                             data-y="['top','top','top','top']" data-voffset="['30','30','30','20']" 
+                                        data-width="['430','430','350','250']"
+                            data-height="['540','540','540','410']"
+                            data-whitespace="nowrap"
+
+                            data-type="shape" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","speed":1400,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 20;background-color:rgba(255, 255, 255, 1.00);border-color:rgba(0, 0, 0, 0);border-width:0px;"> </div>
+
+                        <!-- LAYER NR. 17 -->
+                        <div class="tp-caption PostSlider-Category   tp-resizeme" 
+                             id="slide-1654-layer-3" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['60','60','60','40']" 
+                                        data-fontsize="['15','15','13','13']"
+                            data-lineheight="['15','15','13','13']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="nowrap"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":600,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 21; min-width: 370px; max-width: 370px; white-space: nowrap;">Architectural Gems</div>
+
+                        <!-- LAYER NR. 18 -->
+                        <div class="tp-caption PostSlider-Title   tp-resizeme" 
+                             id="slide-1654-layer-2" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['102','102','92','68']" 
+                                        data-fontsize="['40','40','30','20']"
+                            data-lineheight="['40','40','30','20']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="normal"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":700,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 22; min-width: 370px; max-width: 370px; white-space: normal;">Faithful to Its Mission</div>
+
+                        <!-- LAYER NR. 19 -->
+                        <div class="tp-caption PostSlider-Content   tp-resizeme" 
+                             id="slide-1654-layer-4" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['265','265','215','154']" 
+                                        data-fontsize="['15','15','14','13']"
+                            data-lineheight="['23','23','21','20']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="normal"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":800,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 23; min-width: 370px; max-width: 370px; white-space: normal;">From the Civil War, through two World Wars, Korea, and Vietnam, the AFRH has served the needs of veterans. Try to match its rich variety of architectural styles with the aftermath of America’s great conflicts.<span class="photocap">Image: Aerial view of campus looking south, c. 2000</span></div>
+
+                        <!-- LAYER NR. 20 -->
+                        <div class="tp-caption PostSlider-Button rev-btn  tp-resizeme" 
+                             id="slide-1654-layer-5" 
+                             data-x="['left','left','left','left']" data-hoffset="['770','593','428','230']" 
+                             data-y="['top','top','top','top']" data-voffset="['446','446','446','366']" 
+                                        data-width="none"
+                            data-height="none"
+                            data-whitespace="nowrap"
+
+                            data-type="button" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:10px;opacity:0;","speed":500,"to":"o:1;","delay":900,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"y:10px;opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bg:rgba(173, 31, 45, 1.00);bw:1px 1px 1px 1px;"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[1,1,1,1]"
+                            data-paddingright="[55,55,55,55]"
+                            data-paddingbottom="[1,1,1,1]"
+                            data-paddingleft="[23,23,23,23]"
+
+                            style="z-index: 24; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;"><i class="fas fa-search-location" style="font-size:1.5em; float:left; margin-top:15px;margin-right:10px;"></i> Start Exploring</div>
+                    </li>
+                    <!-- SLIDE  -->
+                    <li data-index="rs-1655" data-transition="fadethroughtransparent" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{% static 'img/slides/51921air_thumb.jpg' %}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                        <!-- MAIN IMAGE -->
+                        <img src="{% static 'img/slides/dummy.png' %}"  alt=""  data-lazyload="{% static 'img/slides/51921air.jpg' %}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+
+                        <!-- LAYER NR. 21 -->
+                        <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
+                             id="slide-1655-layer-1" 
+                             data-x="['right','right','right','right']" data-hoffset="['30','30','30','20']" 
+                             data-y="['top','top','top','top']" data-voffset="['30','30','30','20']" 
+                                        data-width="['430','430','350','250']"
+                            data-height="['540','540','540','410']"
+                            data-whitespace="nowrap"
+
+                            data-type="shape" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","speed":1400,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 25;background-color:rgba(255, 255, 255, 1.00);border-color:rgba(0, 0, 0, 0);border-width:0px;"> </div>
+
+                        <!-- LAYER NR. 22 -->
+                        <div class="tp-caption PostSlider-Category   tp-resizeme" 
+                             id="slide-1655-layer-3" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['60','60','60','40']" 
+                                        data-fontsize="['15','15','13','13']"
+                            data-lineheight="['15','15','13','13']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="nowrap"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":600,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 26; min-width: 370px; max-width: 370px; white-space: nowrap;">Explore the Green Spaces </div>
+
+                        <!-- LAYER NR. 23 -->
+                        <div class="tp-caption PostSlider-Title   tp-resizeme" 
+                             id="slide-1655-layer-2" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['102','102','92','68']" 
+                                        data-fontsize="['40','40','30','20']"
+                            data-lineheight="['40','40','30','20']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="normal"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":700,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 27; min-width: 370px; max-width: 370px; white-space: normal;">An Island of Tranquility</div>
+
+                        <!-- LAYER NR. 24 -->
+                        <div class="tp-caption PostSlider-Content   tp-resizeme" 
+                             id="slide-1655-layer-4" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['265','265','215','154']" 
+                                        data-fontsize="['15','15','14','13']"
+                            data-lineheight="['23','23','21','20']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="normal"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":800,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 28; min-width: 370px; max-width: 370px; white-space: normal;">Tree-lined walkways, open green spaces, a golf course, and a wooded area east of the chapel offer residents and visitors relief from nearby city streets. View the maps and satellite photos of these green landscape areas.<span class="photocap">Image: Aerial view of campus looking north, 1921</span></div>
+
+                        <!-- LAYER NR. 25 -->
+                        <div class="tp-caption PostSlider-Button rev-btn  tp-resizeme" 
+                             id="slide-1655-layer-5" 
+                             data-x="['left','left','left','left']" data-hoffset="['770','593','428','230']" 
+                             data-y="['top','top','top','top']" data-voffset="['446','446','446','366']" 
+                                        data-width="none"
+                            data-height="none"
+                            data-whitespace="nowrap"
+
+                            data-type="button" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:10px;opacity:0;","speed":500,"to":"o:1;","delay":900,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"y:10px;opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bg:rgba(173, 31, 45, 1.00);bw:1px 1px 1px 1px;"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[1,1,1,1]"
+                            data-paddingright="[55,55,55,55]"
+                            data-paddingbottom="[1,1,1,1]"
+                            data-paddingleft="[23,23,23,23]"
+
+                            style="z-index: 29; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;"><i class="fas fa-search-location" style="font-size:1.5em; float:left; margin-top:15px;margin-right:10px;"></i> Start Exploring</div>
+                    </li>
+                    <!-- SLIDE  -->
+                    <li data-index="rs-1656" data-transition="fadethroughtransparent" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{% static 'img/slides/6hospital_thumb.jpg' %}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                        <!-- MAIN IMAGE -->
+                        <img src="{% static 'img/slides/dummy.png' %}"  alt=""  data-lazyload="{% static 'img/slides/6hospital.jpg' %}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+
+                        <!-- LAYER NR. 26 -->
+                        <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
+                             id="slide-1656-layer-1" 
+                             data-x="['right','right','right','right']" data-hoffset="['30','30','30','20']" 
+                             data-y="['top','top','top','top']" data-voffset="['30','30','30','20']" 
+                                        data-width="['430','430','350','250']"
+                            data-height="['540','540','540','410']"
+                            data-whitespace="nowrap"
+
+                            data-type="shape" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","speed":1400,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 25;background-color:rgba(255, 255, 255, 1.00);border-color:rgba(0, 0, 0, 0);border-width:0px;"> </div>
+
+                        <!-- LAYER NR. 27 -->
+                        <div class="tp-caption PostSlider-Category   tp-resizeme" 
+                             id="slide-1656-layer-3" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['60','60','60','40']" 
+                                        data-fontsize="['15','15','13','13']"
+                            data-lineheight="['15','15','13','13']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="nowrap"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":600,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 26; min-width: 370px; max-width: 370px; white-space: nowrap;">Rare Historical Views</div>
+
+                        <!-- LAYER NR. 28 -->
+                        <div class="tp-caption PostSlider-Title   tp-resizeme" 
+                             id="slide-1656-layer-2" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['102','102','92','68']" 
+                                        data-fontsize="['40','40','30','20']"
+                            data-lineheight="['40','40','30','20']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="normal"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":700,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 27; min-width: 370px; max-width: 370px; white-space: normal;">Gone but not Forgotten</div>
+
+                        <!-- LAYER NR. 29 -->
+                        <div class="tp-caption PostSlider-Content   tp-resizeme" 
+                             id="slide-1656-layer-4" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['265','265','215','154']" 
+                                        data-fontsize="['15','15','14','13']"
+                            data-lineheight="['23','23','21','20']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="normal"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":800,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 28; min-width: 370px; max-width: 370px; white-space: normal;">Over the years, many of the original buildings of the AFRH have been replaced by more modern complexes for medical and social service facilities. Learn about their stories and view early engravings and photos.<span class="photocap">Image: Hospital complex, 1935</span></div>
+
+                        <!-- LAYER NR. 30 -->
+                        <div class="tp-caption PostSlider-Button rev-btn  tp-resizeme" 
+                             id="slide-1656-layer-5" 
+                             data-x="['left','left','left','left']" data-hoffset="['770','593','428','230']" 
+                             data-y="['top','top','top','top']" data-voffset="['446','446','446','366']" 
+                                        data-width="none"
+                            data-height="none"
+                            data-whitespace="nowrap"
+
+                            data-type="button" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:10px;opacity:0;","speed":500,"to":"o:1;","delay":900,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"y:10px;opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bg:rgba(173, 31, 45, 1.00);bw:1px 1px 1px 1px;"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[1,1,1,1]"
+                            data-paddingright="[55,55,55,55]"
+                            data-paddingbottom="[1,1,1,1]"
+                            data-paddingleft="[23,23,23,23]"
+
+                            style="z-index: 29; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;"><i class="fas fa-search-location" style="font-size:1.5em; float:left; margin-top:15px;margin-right:10px;"></i> Start Exploring</div>
+                    </li>
+                    <!-- SLIDE  -->
+                    <li data-index="rs-1657" data-transition="fadethroughtransparent" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{% static 'img/slides/7scottrev_thumb.jpg' %}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                        <!-- MAIN IMAGE -->
+                        <img src="{% static 'img/slides/dummy.png' %}"  alt=""  data-lazyload="{% static 'img/slides/7scottrev.jpg' %}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+
+                        <!-- LAYER NR. 31 -->
+                        <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" 
+                             id="slide-1657-layer-1" 
+                             data-x="['right','right','right','right']" data-hoffset="['30','30','30','20']" 
+                             data-y="['top','top','top','top']" data-voffset="['30','30','30','20']" 
+                                        data-width="['430','430','350','250']"
+                            data-height="['540','540','540','410']"
+                            data-whitespace="nowrap"
+
+                            data-type="shape" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","speed":1400,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 25;background-color:rgba(255, 255, 255, 1.00);border-color:rgba(0, 0, 0, 0);border-width:0px;"> </div>
+
+                        <!-- LAYER NR. 32 -->
+                        <div class="tp-caption PostSlider-Category   tp-resizeme" 
+                             id="slide-1657-layer-3" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['60','60','60','40']" 
+                                        data-fontsize="['15','15','13','13']"
+                            data-lineheight="['15','15','13','13']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="nowrap"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":600,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 26; min-width: 370px; max-width: 370px; white-space: nowrap;">Great Military Figures</div>
+
+                        <!-- LAYER NR. 33 -->
+                        <div class="tp-caption PostSlider-Title   tp-resizeme" 
+                             id="slide-1657-layer-2" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['102','102','92','68']" 
+                                        data-fontsize="['40','40','30','20']"
+                            data-lineheight="['40','40','30','20']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="normal"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":700,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 27; min-width: 370px; max-width: 370px; white-space: normal;">Presidents, Generals, and Retired Enlisted Men</div>
+
+                        <!-- LAYER NR. 34 -->
+                        <div class="tp-caption PostSlider-Content   tp-resizeme" 
+                             id="slide-1657-layer-4" 
+                             data-x="['right','right','right','right']" data-hoffset="['60','60','60','40']" 
+                             data-y="['top','top','top','top']" data-voffset="['265','265','215','154']" 
+                                        data-fontsize="['15','15','14','13']"
+                            data-lineheight="['23','23','21','20']"
+                            data-width="['370','370','290','210']"
+                            data-height="none"
+                            data-whitespace="normal"
+
+                            data-type="text" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:20px;opacity:0;","speed":500,"to":"o:1;","delay":800,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+
+                            style="z-index: 28; min-width: 370px; max-width: 370px; white-space: normal;">Many of the nation’s memorable military and political figures are memorialized throughout the AFRH campus. Search the map and read the stories of how these leaders shaped the history of the AFRH.<span class="photocap">Image: Scott Statue, placed on campus in 1873</span></div>
+
+                        <!-- LAYER NR. 35 -->
+                        <div class="tp-caption PostSlider-Button rev-btn  tp-resizeme" 
+                             id="slide-1657-layer-5" 
+                             data-x="['left','left','left','left']" data-hoffset="['770','593','428','230']" 
+                             data-y="['top','top','top','top']" data-voffset="['446','446','446','366']" 
+                                        data-width="none"
+                            data-height="none"
+                            data-whitespace="nowrap"
+
+                            data-type="button" 
+                            data-responsive_offset="on" 
+
+                            data-frames='[{"from":"y:10px;opacity:0;","speed":500,"to":"o:1;","delay":900,"ease":"Power3.easeOut"},{"delay":"wait","speed":1000,"to":"y:10px;opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bg:rgba(173, 31, 45, 1.00);bw:1px 1px 1px 1px;"}]'
+                            data-textAlign="['left','left','left','left']"
+                            data-paddingtop="[1,1,1,1]"
+                            data-paddingright="[55,55,55,55]"
+                            data-paddingbottom="[1,1,1,1]"
+                            data-paddingleft="[23,23,23,23]"
+
+                            style="z-index: 29; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;"><i class="fas fa-search-location" style="font-size:1.5em; float:left; margin-top:15px;margin-right:10px;"></i> Start Exploring</div>
                     </li>
                 </ul>
-                <div class="tp-bannertimer tp-bottom"></div>
+                <div class="tp-bannertimer tp-bottom" style="height: 5px; background-color: rgba(255, 255, 255, 0.75);"></div>	
+            </div>
+        </div><!-- END REVOLUTION SLIDER -->
+		
+    <!-- ABOUT SECTION -->
+    <section id="about" class="container g-pt-100 g-pb-50">
+      <div class="row justify-content-center g-mb-60">
+        <div class="col-lg-12">
+          <!-- Heading -->
+          <div class="text-center">
+            <h1 class="g-color-black mb-2">About AFRH-IRIS</h1>
+            <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>
+            <p class="mb-0">The online Armed Forces Retirement Home Information and Resource Inventory System (AFRH-IRIS) offers a new and exciting way to explore and manage the historic resources of the Armed Forces Retirement Home - Washington.</p> 
+          </div>
+          <!-- End Heading -->
+        </div>
+	  </div>
+      <div class="row">
+        <div class="col-lg-6 g-mb-50">
+          <img class="img-fluid" src="{% static 'img/laptop.png' %}" alt="Arches Map on a Laptop">
+        </div>
+        <div class="col-lg-6">
+          <div class="mb-5" id="help">
+			<ul class="list-unstyled mb-0">
+			  <li class="d-flex mb-3">
+				<i class="fas fa-search-location g-font-size-24 g-mr-10"></i>
+				Search the Map to discover our resources and understand the layout of the AFRH-W grounds.
+			  </li>
+			  <li class="d-flex mb-3">
+				<i class="fas fa-map-marked-alt g-font-size-24 g-mr-10"></i>
+				Check out the historic maps that we have included as transparent overlays.
+			  </li>
+			  <li class="d-flex mb-3">
+				<i class="fas fa-search g-font-size-24 g-mr-10"></i>
+				Use the search bar to find specific historic resources, photos, and people.
+			  </li>
+			  <li class="d-flex mb-3">
+				<i class="far fa-question-circle g-font-size-24 g-mr-10"></i>
+				 Every page has built-in help in case you get stuck--just click the ? link at the top of the page. 
+			  </li>
+			</ul>
+              <div class="text-right">
+                  <a class="btn btn-md u-btn-primary g-brd-2 rounded-0" href="{% url 'search_home' %}">Start Exploring</a>
+              </div>
+          </div>
+        </div>
+      </div>
+	  <div class="row justify-content-center g-mb-60">
+	  	<div class="col-lg-12">
+			<p class="mb-0 text-center">This website is powered by Arches v5, a free and open source software platform designed to create and manage rich inventories of culturally signficant resources. Check out the <a href="http://www.archesproject.org">Arches website</a> to learn more, or the <a href="https://groups.google.com/forum/#!forum/archesproject">Arches forum</a> to get involved.</p>
+		</div>
+	  </div>
+    </section>
+   
+        
+        
+    <!-- Footer -->
+    <footer class="g-bg-red-lineargradient g-pt-60 g-color-white">
+      <div class="container g-pb-60">
+            <div class="u-heading-v2-3--bottom g-brd-white g-mb-20">
+              <h2 class="mb-0">Stay Connected</h2>
+            </div>
+            <div class="g-mb-30">
+              <p>Enjoy exploring the AFRH-ISIS, and please contact our team if you have any questions, comments or suggestions.</p>
+            </div>
+                <p class="g-mb-10">Visit our agency website: <a class="g-color-white" href="http://www.afrh.gov">www.afrh.gov</a></p>
+                <p class="g-mb-10">Get in touch: <a class="g-color-white" href="mailto:public.affairs@afrh.gov">public.affairs@afrh.gov</a></p>
+      </div>
+    </footer>
+
+    <!-- Copyright Footer -->
+      <div class="g-py-20 g-bg-blue-lineargradient copyright">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6 g-mb-40 g-mb-0--lg g-color-white">
+                  <small class="g-font-size-default g-mr-10 g-mb-10 g-mb-0--md"><a class="g-color-white" href="https://github.com/archesproject/arches">Arches v5</a> | <a class="g-color-white" href="https://github.com/legiongis/afrh-prj">AFRH-W Customization</a>
+                  </small>
+              </div>
+              <div class="col-md-6 g-mb-40 g-mb-0--lg text-right">
+                  <a href="http://www.archesproject.org">
+                    <img class="arches-logo" id="logo-footer" src="{% static 'img/PoweredByArches.png' %}" alt="">
+                </a>
+              </div>    
             </div>
         </div>
-    </section>
-    <!-- End Intro Section -->
+      </div>
+     <!-- End Copyright Footer -->
 
-
-    <!--  About Section -->
-    <section class="about-section section-first" style="padding-top: 0px;">
-
-
-        <div id="about" class="about-image bg-grey">
-            <div class="container">
-                <div class="title-v1">
-                    <h1>{% trans "What is Arches" %}</h1>
-                    <p>{% trans "Arches is <strong>awesome</strong> technology designed to ease Cultural Heritage data management.<br> Use Arches to build an inventory of cultural heritage assets such as objects, research activities, areas, datasets, and people or  organizations." %}</p>
-                </div>
-                <div class="img-center">
-                    <img class="img-responsive" src="{% static 'img/landing/disco.jpg' %}" alt="">
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <!--  About Section -->
-
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container content-lg">
-            <div class="title-v1">
-                <h2>{% trans "Capabilities" %}</h2>
-                <p>{% trans "Arches can <strong> streamline your work</strong> so that you can focus on managing your assets.<br> Build interoperable, shareable, and secure <strong> cultural heritage data repositories</strong> as a natural part of your workflow." %}</p>
-            </div>
-
-            <div class="row service-box-v1">
-                <div class="col-md-4 col-sm-6">
-                    <div class="service-block service-block-default">
-                        <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-lightbulb-o"></i>
-                        <h2 class="heading-md">{% trans "Manage Heritage Inventories" %}</h2>
-                        <p></p>
-                        <ul class="list-unstyled">
-                            <li>{% trans "Heritage Objects" %}</li>
-                            <li>{% trans "Research Activities" %}</li>
-                            <li>{% trans "People and Orgnizations" %}</li>
-                            <li>{% trans "Important Areas" %}</li>
-                            <li>{% trans "Documents and Images" %}</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="service-block service-block-default">
-                        <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line icon-present"></i>
-                        <h2 class="heading-md">{% trans "Research Data" %}</h2>
-                        <p></p>
-                        <ul class="list-unstyled">
-                            <li>{% trans "Manage Digital Datasets" %}</li>
-                            <li>{% trans "Visualize Spectra" %}</li>
-                            <li>{% trans "Easy Dataset Import" %}</li>
-                            <li>{% trans "View & Manage Data" %}</li>
-                            <li>{% trans "Easy Access" %}</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <div class="service-block service-block-default">
-                        <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line icon-rocket"></i>
-                        <h2 class="heading-md">{% trans "Interpretations & Results" %}</h2>
-                        <p></p>
-                        <ul class="list-unstyled">
-                            <li>{% trans "Manage Data Interpretations" %}</li>
-                            <li>{% trans "Share Research Results" %}</li>
-                            <li>{% trans "Tie Results to Iconography" %}</li>
-                            <li>{% trans "Centralize Results" %}</li>
-                            <li>{% trans "Publish Results" %}</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Services Section -->
-
-    <!-- News Section -->
-    <section id="news" class="news-section bg-grey" >
-        <div class="container content-lg">
-            <div class="title-v1">
-                <h2>{% trans "Latest News" %}</h2>
-                <p></p>
-            </div>
-
-            <div class="row news-v1 text-center">
-                Add your content here
-            </div>
-
-            <!-- <div class="row news-v1">
-                <div class="col-md-4 md-margin-bottom-40">
-                    <div class="news-v1-in">
-                        <img class="img-responsive" src="{% static 'img/landing/img1.jpg' %}" alt="">
-                        <h3><a href="#">At vero eos et accusamus</a></h3>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
-                        <ul class="list-inline news-v1-info">
-                            <li><span>By</span> <a href="#">Arches Project Team</a></li>
-                            <li>|</li>
-                            <li><i class="fa fa-clock-o"></i> March 02, 2016</li>
-                            <li class="pull-right"><a href="#"><i class="fa fa-comments-o"></i> 14</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 md-margin-bottom-40">
-                    <div class="news-v1-in">
-                        <img class="img-responsive" src="{% static 'img/landing/img4.jpg' %}" alt="">
-                        <h3><a href="#">Voluptatum deleniti atque</a></h3>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
-                        <ul class="list-inline news-v1-info">
-                            <li><span>By</span> <a href="#">Catherine Patterson</a></li>
-                            <li>|</li>
-                            <li><i class="fa fa-clock-o"></i> July 02, 2015</li>
-                            <li class="pull-right"><a href="#"><i class="fa fa-comments-o"></i> 07</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="news-v1-in">
-                        <img class="img-responsive" src="{% static 'img/landing/img3.jpg' %}" alt="">
-                        <h3><a href="#">Accusamus et iusto odio dignissimos</a></h3>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
-                        <ul class="list-inline news-v1-info">
-                            <li><span>By</span> <a href="#">Karen Trentleman</a></li>
-                            <li>|</li>
-                            <li><i class="fa fa-clock-o"></i> July 02, 2015</li>
-                            <li class="pull-right"><a href="#"><i class="fa fa-comments-o"></i> 22</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-    </section>
-    <!-- End News Section -->
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="contacts-section">
-        <div class="copyright-section">
-            <p>{{copyright_year}} &copy; {{copyright_text}} </p>
-            <ul class="social-icons">
-                <li>
-                    <a href="#" data-original-title="Facebook" class="social_facebook rounded-x"></a>
-                </li>
-                <li>
-                    <a href="#" data-original-title="Twitter" class="social_twitter rounded-x"></a>
-                </li>
-                <li>
-                    <a href="#" data-original-title="Google Plus" class="social_googleplus rounded-x"></a>
-                </li>
-                <li>
-                    <a href="#" data-original-title="Pinterest" class="social_pintrest rounded-x"></a>
-                </li>
-                <li>
-                    <a href="#" data-original-title="Linkedin" class="social_linkedin rounded-x"></a>
-                </li>
-            </ul>
-            <span class="page-scroll"><a href="#intro"><i class="fa fa-angle-double-up back-to-top"></i></a></span>
-        </div>
-    </section>
-    <!-- End Contact Section -->
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.0/jquery-migrate.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.3.8/SmoothScroll.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.0/jquery-migrate.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
-    <script src="{% static 'plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js' %}"></script>
-    <script src="{% static 'plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
-    <script src="{% static 'plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js' %}"></script>
-    <script src="{% static 'plugins/one.app.js' %}"></script>
-    <script src="{% static 'plugins/pace-loader.js' %}"></script>
-    <script src="{% static 'plugins/owl-carousel.js' %}"></script>
-    <script src="{% static 'plugins/style-switcher.js' %}"></script>
-    <script src="{% static 'plugins/revolution-slider.js' %}"></script>
-    <script src="{% static 'plugins/cube-portfolio-lightbox.js' %}"></script>
+	
+    <!-- JS Implementing Plugins -->
+    <script src="{% static 'js/unify/plugins/masonry.pkgd.min.js.download' %}"></script>
+    <script src="{% static 'js/unify/plugins/imagesloaded.pkgd.min.js.download' %}"></script>
+    <script src="{% static 'js/unify/plugins/slick.js.download' %}"></script>
+    <script src="{% static 'js/unify/plugins/hs.megamenu.js.download' %}"></script>
+
+    <!-- JS Unify -->
+	<script src="{% static 'js/unify/hs.core.js' %}"></script>
+	<script src="{% static 'js/unify/components/hs.carousel.js' %}"></script>
+	<script src="{% static 'js/unify/components/hs.header.js' %}"></script>
+	<script src="{% static 'js/unify/helpers/hs.hamburgers.js' %}"></script>
+	<script src="{% static 'js/unify/components/hs.tabs.js' %}"></script>
+	<script src="{% static 'js/unify/components/hs.counter.js' %}"></script>
+	<script src="{% static 'js/unify/components/hs.go-to.js' %}"></script>
+	<!-- JS Revolution Slider -->
+	<script src="{% static 'plugins/rev-slider/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+	<script src="{% static 'plugins/rev-slider/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+	<script src="{% static 'plugins/rev-slider/revolution-addons/slicey/js/revolution.addon.slicey.min.js' %}"></script>
+	<script src="{% static 'plugins/rev-slider/revolution/js/extensions/revolution.extension.actions.min.js' %}"></script>
+	<script src="{% static 'plugins/rev-slider/revolution/js/extensions/revolution.extension.carousel.min.js' %}"></script>
+	<script src="{% static 'plugins/rev-slider/revolution/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+	<script src="{% static 'plugins/rev-slider/revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+	<script src="{% static 'plugins/rev-slider/revolution/js/extensions/revolution.extension.migration.min.js' %}"></script>
+	<script src="{% static 'plugins/rev-slider/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+	<script src="{% static 'plugins/rev-slider/revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+	<script src="{% static 'plugins/rev-slider/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+	<script src="{% static 'plugins/rev-slider/revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+    
+	<script src="{% static 'plugins/one.app.js' %}"></script>
     <script src="{% static 'packages/knockout/build/output/knockout-latest.js' %}"></script>
 
+ 
+        <script type="text/javascript">
+            var tpj=jQuery;
+			
+			var revapi477;
+			tpj(document).ready(function() {
+				if(tpj("#rev_slider_477_1").revolution == undefined){
+					revslider_showDoubleJqueryError("#rev_slider_477_1");
+				}else{
+					revapi477 = tpj("#rev_slider_477_1").show().revolution({
+						sliderType:"standard",
+                        jsFileLocation:"{% static 'plugins/rev-slider/revolution/js/' %}",
+						sliderLayout:"auto",
+						dottedOverlay:"none",
+						delay:9000,
+						navigation: {
+							keyboardNavigation:"off",
+							keyboard_direction: "horizontal",
+							mouseScrollNavigation:"off",
+ 							mouseScrollReverse:"default",
+							onHoverStop:"on",
+							touch:{
+								touchenabled:"on",
+								swipe_threshold: 75,
+								swipe_min_touches: 50,
+								swipe_direction: "horizontal",
+								drag_block_vertical: false
+							}
+							,
+							thumbnails: {
+								style:"gyges",
+								enable:true,
+								width:70,
+								height:70,
+								min_width:70,
+								wrapper_padding:10,
+								wrapper_color:"#333333",
+								wrapper_opacity:"0",
+								tmp:'<span class="tp-thumb-img-wrap">  <span class="tp-thumb-image"></span></span>',
+								visibleAmount:7,
+								hide_onmobile:false,
+								hide_onleave:false,
+								direction:"vertical",
+								span:true,
+								position:"inner",
+								space:5,
+								h_align:"left",
+								v_align:"top",
+								h_offset:0,
+								v_offset:0
+							}
+						},
+						responsiveLevels:[1240,1024,778,480],
+						visibilityLevels:[1240,1024,778,480],
+						gridwidth:[1200,1024,778,480],
+						gridheight:[600,600,600,450],
+						lazyType:"single",
+						parallax: {
+							type:"scroll",
+							origo:"slidercenter",
+							speed:400,
+							levels:[5,10,15,20,25,30,35,40,45,46,47,48,49,50,51,55],
+							type:"scroll",
+						},
+						shadow:0,
+						spinner:"off",
+						stopLoop:"off",
+						stopAfterLoops:-1,
+						stopAtSlide:-1,
+						shuffle:"off",
+						autoHeight:"off",
+						hideThumbsOnMobile:"off",
+						hideSliderAtLimit:0,
+						hideCaptionAtLimit:0,
+						hideAllCaptionAtLilmit:0,
+						debugMode:false,
+						fallbacks: {
+							simplifyAll:"off",
+							nextSlideOnWindowFocus:"off",
+							disableFocusListener:false,
+						}
+					});
+				}
+			});	/*ready*/
 
-    <script>
-        jQuery(document).ready(function() {
-            App.init();
-            App.initCounter();
-            App.initParallaxBg();
-            OwlCarousel.initOwlCarousel();
-            StyleSwitcher.initStyleSwitcher();
-            RevolutionSlider.initRSfullScreen();
-        });
-
+		$(document).on('ready', function () {
+		  // initialization of go to
+		  $.HSCore.components.HSGoTo.init('.js-go-to');
+		  // initialization of HSScrollBar component
+		  $.HSCore.components.HSScrollBar.init($('.js-scrollbar'));
+    	});
+	
+		$(window).on('load', function () {
+			  // initialization of header
+			  $.HSCore.components.HSHeader.init($('#js-header'));
+			  $.HSCore.helpers.HSHamburgers.init('.hamburger');
+		});
         var ViewModel = function(first, last) {
             this.showAuthMenu = ko.observable(false);
         };
         ko.applyBindings(new ViewModel());
-
     </script>
-
 </body>
-
 </html>

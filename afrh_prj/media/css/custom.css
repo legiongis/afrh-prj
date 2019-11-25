@@ -1,0 +1,173 @@
+/*-----------------------------------------------------------------------------
+
+- Typography  -
+
+-----------------------------------------------------------------------------*/
+
+html {font-size: 16px !important;}
+
+body {
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1em !important;
+  color: #333;
+}
+
+p {font-size: 1em;}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 3.052em;
+}
+
+h2 {font-size: 2.441em;}
+
+h3 {font-size: 1.953em;}
+
+h4 {font-size: 1.563em;}
+
+h5 {font-size: 1.25em;}
+
+small, .text_small {font-size: 0.8em;}
+
+/*-----------------------------------------------------------------------------
+
+- Color Overrides  -
+
+-----------------------------------------------------------------------------*/
+.g-bg-primary {
+    background-color: #2b328c !important;
+}
+a, a:hover {
+  color: #2b328c;
+    font-weight: 900;
+}
+.u-btn-primary {
+  color: #fff;
+  background-color: #2b328c;
+}
+.u-btn-primary:hover, .u-btn-primary.active {
+  border-color: #ad1f2d;
+  background-color: #ad1f2d;
+}
+.g-bg-red-lineargradient {
+    background-image: linear-gradient(225deg, #ad1f2d, #65121a);
+}
+.g-bg-blue-lineargradient {
+    background-image: linear-gradient(225deg, #6068ce, #2b328c);
+}
+/*-----------------------------------------------------------------------------
+
+- Navbar  -
+
+-----------------------------------------------------------------------------*/
+a.nav-link {
+	font-size: 1.2em;
+}
+a.nav-link:hover {
+	color: #2c318c !important;
+}
+.navbar .nav-item.active > .nav-link,
+.navbar .nav-item:hover > .nav-link,
+.navbar .nav-item:focus > .nav-link,
+.navbar .nav-item.show > .nav-link,
+.navbar .nav-item.hs-sub-menu-opened > .nav-link,
+.navbar .nav-item .nav-link:focus {
+  border-bottom: 3px solid #2c318c;
+  padding: 5px;    
+}
+/*-----------------------------------------------------------------------------
+
+- Revolution Slider Overrides  -
+
+-----------------------------------------------------------------------------*/
+.tp-caption.PostSlider-Category,
+.PostSlider-Category {
+    color: rgba(0, 0, 0, 1.00);
+    font-size: 1em;;
+    line-height: 15px;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+}
+.tp-caption.PostSlider-Title,
+.PostSlider-Title {
+    font-size: 4em;
+    line-height: 1em;
+	font-family: 'EB Garamond', serif;
+	font-style: italic;
+	font-weight: 400;
+}
+.tp-caption.PostSlider-Content,
+.PostSlider-Content {
+    color: black;
+    font-size: 1.25em;
+    line-height: 1.2em;
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Open Sans', sans-serif;
+}
+span.photocap {
+    color: black;
+    font-size: .8em;
+    line-height: 1em;
+    font-weight: 400;
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    margin-top: 2em;
+}
+.tp-caption.PostSlider-Button,
+.PostSlider-Button {
+    color: white;
+    font-size: 1.5em;
+    line-height: 3em;
+    font-weight: 500;
+    font-style: normal;
+    font-family: 'Open Sans', sans-serif;
+    padding: 1px 56px 1px 32px;
+    text-decoration: none;
+    background-color: #2c318c;
+    border-color: rgba(0, 0, 0, 1.00);
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 0px 0px 0px 0px;
+    text-align: left
+}
+.tp-caption.PostSlider-Button:hover,
+.PostSlider-Button:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #ad1f2d;
+    border-color: rgba(0, 0, 0, 1.00);
+    cursor: pointer
+}
+/*-----------------------------------------------------------------------------
+
+- About  -
+
+-----------------------------------------------------------------------------*/
+#about li {
+	font-size: 1em;
+	color: black;
+}
+/*-----------------------------------------------------------------------------
+
+- Footer and Copyright  -
+
+-----------------------------------------------------------------------------*/
+div.copyright {
+    border-top: 1px solid white;
+}
+.copyright img {
+    width: 50%;
+}
+.copyright a {
+    font-weight: 400;
+}
