@@ -1,5 +1,4 @@
 *.pyc
-.yarnrc
 arches.log
 afrh_prj/media/packages
 afrh_prj/logs/*.log
